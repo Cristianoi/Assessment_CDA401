@@ -1,0 +1,25 @@
+header {
+    background-color:green;
+}
+
+
+left_section {
+    margin-left:3%;
+    width: 20%;
+    height: 400px;
+    float: left;
+    background-color: yellow;
+}
+
+section {
+    margin-right: 3%px;
+    float: right;
+    width: 70%;
+    background-color: blue;
+}
+
+footer {
+    width: 100%;
+    float: right;
+    background-color: red;
+}
