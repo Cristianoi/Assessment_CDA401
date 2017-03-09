@@ -23,3 +23,8 @@ footer {
     float: right;
     background-color: red;
 }
+
+#time, #date {
+    display: inline;   
+}
+

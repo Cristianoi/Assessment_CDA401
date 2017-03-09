@@ -3,10 +3,11 @@
     <head>
         <title>Solent Pizza</title>
         <link rel="stylesheet" href="css/styles.css">
+        <script type="text/javascript" src="scripts/main.js">  </script>
         <meta charset="UTF-8">
         
     </head>
-    <body>
+    <body onload="main()">
         <div id="wrapper">  
             <header>
                 <h1>Header</h1>
@@ -18,11 +19,18 @@
             </left_section>
 
             <section>
-                <h2>Section</h2>       
+                <h2>Section</h2>
+                <div class="Carousel">
+                  <img alt="image1" class="Pizzas" src="img/pizza1.jpg">
+                  <img  alt="image2" class="Pizzas" src="img/pizza2.jpg">
+                  <img alt="image3" class="Pizzas" src="img/pizza3.jpg">
+                </div>
             </section>
 
             <footer>
                 <h3>Footer</h3>
+                <h3>Date: </h3><p id="date"></p>
+                <h3>Time: </h3><p id="time"></p>
             </footer>
         </div>
     </body>
