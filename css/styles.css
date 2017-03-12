@@ -1,5 +1,5 @@
 header {
-    background-color:green;
+    border: solid black 1px;
 }
 
 
@@ -8,23 +8,30 @@ left_section {
     width: 20%;
     height: 400px;
     float: left;
-    background-color: yellow;
+    border: solid black 1px;
 }
 
 section {
     margin-right: 3%px;
     float: right;
     width: 70%;
-    background-color: blue;
+    border: solid black 1px;
 }
 
 footer {
     width: 100%;
     float: right;
-    background-color: red;
+    border: solid black 1px;
 }
 
 #time, #date {
     display: inline;   
 }
 
+.Carousel {
+    max-width: 50%;
+}
+
+.Pizzas {
+    width: 100%;
+}
