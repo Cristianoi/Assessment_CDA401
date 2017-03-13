@@ -3,10 +3,11 @@
     <head>
         <title>Contact</title>
         <link rel="stylesheet" href="css/styles.css">
+        <script type="text/javascript" src="scripts/main.js"> </script>
         <meta charset="UTF-8">
 
     </head>
-    <body>
+    <body onload="main()">
         <div id="wrapper">  
             <header>
                 <h1>Contact</h1>
@@ -21,18 +22,18 @@
                 <h3>LeftSide</h3>       
             </left_section><!-- Left Section Ends -->
             <section>
-                <h2>Section</h2>
+                <h2>Contact Us</h2>
                 <form action="/action_page.php">
                     <fieldset>
                         <legend>Personal information:</legend>
                         First name:<br>
-                        <input type="text" name="first_name" required><br>
+                        <input type="text" name="first_name" onchange="validateForm(this.name, this.value)" required><br>
                         Last name:<br>
-                        <input type="text" name="last_name" required><br>
+                        <input type="text" name="last_name" onchange="validateForm(this.name, this.value)" required><br>
                         Email:<br>
-                        <input type="email" name="email" required><br>
+                        <input type="email" name="email" onchange="validateForm(this.name, this.value)" required><br>
                         Phone number:<br>
-                        <input type="number" name="phone"><br>
+                        <input type="number" name="phone" onchange="validateForm(this.name, this.value)"><br>
                         Message:<br>
                         <textarea name="message" rows="10" cols="40" ></textarea><br><br>
                         <input type="submit" value="Submit">
@@ -43,6 +44,8 @@
 
             <footer>
                 <h3>Footer</h3>
+                <p></p><p id="date"></p><br>
+                <p>Time: </p><p id="time"></p>
             </footer><!-- Footer Ends -->
         </div>
     </body>

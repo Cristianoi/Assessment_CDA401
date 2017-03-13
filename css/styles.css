@@ -24,13 +24,28 @@ footer {
     border: solid black 1px;
 }
 
-header h1 {
+header h1, section h2 {
     text-align: center;
+    
 }
 
-#time, #date {
-    display: inline;   
-    float: rig
+footer p {
+    display:inline-block;
+    margin: 0;
+    
+}
+#time {
+    border: double 4px red;
+    padding: 2px;
+    font-weight: bold;
+}
+
+footer #time, footer #date {
+    
+}
+
+footer {
+    text-align: center;
 }
 
 .Carousel {
@@ -73,5 +88,27 @@ header h1 {
 .nav li a:hover:not(.active) {
     background-color: red;
     color: white;
+}
+
+#pizza_base, #toppings, #extras, #delivery_info {
+    display: block;
+    margin-bottom: 5px;
+    background-color:lightcoral; 
+}
+
+#delivery_form {
+    width: 300px;
+}
+
+#delivery_form p {
+    margin-left: 5px;
+}
+
+#delivery_form input {
+    float: right;
+}
+
+.your_order {
+    background-color: lightgoldenrodyellow;
 }
 
