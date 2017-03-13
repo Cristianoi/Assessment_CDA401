@@ -1,24 +1,49 @@
 <!doctype html>
 <html lang="en">
-        <head>
-                <title>Contact</title>
-                <link rel="stylesheet" href="css/styles.css">
-                <meta charset="UTF-8">
+    <head>
+        <title>Contact</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <meta charset="UTF-8">
+
+    </head>
+    <body>
+        <div id="wrapper">  
+            <header>
                 <h1>Contact</h1>
-        </head>
-        <body>
-                <div id="wrapper">  
-                        <header>
-                                <h1>Header</h1>
-                        </header>
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="contact.html">Contact</a></li>
+                    <li><a href="order.html">Order</a></li>
+                </ul>
+            </header><!-- Header Ends -->
 
-                        <section>
-                                <h2>Section</h2>       
-                        </section>
+            <left_section>
+                <h3>LeftSide</h3>       
+            </left_section><!-- Left Section Ends -->
+            <section>
+                <h2>Section</h2>
+                <form action="/action_page.php">
+                    <fieldset>
+                        <legend>Personal information:</legend>
+                        First name:<br>
+                        <input type="text" name="first_name" required><br>
+                        Last name:<br>
+                        <input type="text" name="last_name" required><br>
+                        Email:<br>
+                        <input type="email" name="email" required><br>
+                        Phone number:<br>
+                        <input type="number" name="phone"><br>
+                        Message:<br>
+                        <textarea name="message" rows="10" cols="40" ></textarea><br><br>
+                        <input type="submit" value="Submit">
+                    </fieldset>
+                </form>
+                
+            </section><!-- Section Ends -->
 
-                        <footer>
-                                <h3>Footer</h3>
-                        </footer>
-                </div>
-        </body>
+            <footer>
+                <h3>Footer</h3>
+            </footer><!-- Footer Ends -->
+        </div>
+    </body>
 </html> 

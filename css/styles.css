@@ -24,8 +24,13 @@ footer {
     border: solid black 1px;
 }
 
+header h1 {
+    text-align: center;
+}
+
 #time, #date {
     display: inline;   
+    float: rig
 }
 
 .Carousel {
@@ -35,3 +40,38 @@ footer {
 .Pizzas {
     width: 100%;
 }
+
+.nav {
+    border:1px solid #ccc;
+    border-width:1px 0;
+    list-style:none; /* removes bullet points */
+    margin:0;
+    padding:0;
+    text-align:center;
+    background-color: lightgray;
+    
+}
+
+.nav li {
+    display:inline; /* gets links next to each other */
+    
+    
+}
+
+.nav a {
+    display:inline-block; /* allows to add padding without going over other lines & makes the whole area clickable */
+    padding:10px;
+    text-decoration: none; /* removes underlines */
+    color: red;
+    
+}
+
+.nav li a.active {
+    background-color: lightyellow;
+}
+
+.nav li a:hover:not(.active) {
+    background-color: red;
+    color: white;
+}
+
