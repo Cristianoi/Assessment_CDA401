@@ -2,12 +2,16 @@ var current_image = 0;
 
 
 function main() {
-    console.log("working");
+    
     timeClock();
     
     imageCarousel();
     
     showMap();
+    
+    myForm = document.getElementById("your_order");
+    myForm.addEventLinstener("change", updateOrder());
+    
 }
 
 function addZero(time) {
@@ -45,7 +49,6 @@ function imageCarousel() {
         image[i].style.display = "none";
     }
     for (var i = 0; i < image.length; i++) {
-        console.log("current image = " + current_image)
         if (i == current_image) {
             image[i].style.display = "block";
         }
@@ -54,15 +57,11 @@ function imageCarousel() {
     if (current_image == image.length) {
         current_image = 0;
     }
-    setTimeout("imageCarousel()",4000);
+    setTimeout("imageCarousel()",3000);
         
 }
 
-function showMap() {
-    var uluru = {lat: -25.363, lng: 131.044};
-    var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: uluru});
-    var marker = new google.maps.Marker({position: uluru, map: map});
-}
+
 
 function validateForm(name, val) {
     console.log(name + " " + val );
@@ -80,9 +79,37 @@ function validateForm(name, val) {
 
 function reset_form() {
     console.log("resetting..")
-    var form = document.getElementById("base_form");
-    console.log(form.base[1].value);
-    for (var i=0; i < document.form.base.length; i++) {
-        console.log("checked")
+    var form = document.getElementById("your_order");
+    
+    for (var i = 0; i < form.base.length; i++) {
+        form.base[i].checked = false
     }
+    
+    for (var i = 0; i < form.toppings.length; i++) {
+        form.toppings[i].checked = false
+    }
+    
+    for (var i = 0; i < form.extras.length; i++) {
+        form.extras[i].checked = false
+    }
+}
+
+function updateOrder(event) {
+    var total = 0;
+    var choices = "";
+    
+    console.log("form changed")
+}
+
+function showMap() {
+    var myCenter = new google.maps.LatLng(50.9080, -1.4002);
+    var mapCanvas = document.getElementById("myMap");
+    var mapOptions = {center: myCenter, zoom: 14};
+    var map = new google.maps.Map(mapCanvas, mapOptions)
+    var marker = new google.maps.Marker({position:myCenter, animation: google.maps.Animation.BOUNCE});
+  marker.setMap(map);
+    var infowindow = new google.maps.InfoWindow({
+        content: "We are here!"
+    });
+    infowindow.open(map,marker);
 }

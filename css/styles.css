@@ -1,21 +1,54 @@
 header {
+    width: 100%;
     border: solid black 1px;
+    
+}
+
+header img {
+    width: 500px;
+    display: block;
+    margin: 0 auto;  
+    padding: 10px;
+    
 }
 
 
+offersBox {
+    width: 40%;
+    min-width: 600px;
+    
+    min-height: 240px;
+    
+    border: solid black 1px;
+    display: block;
+    margin: 0 auto;
+    
+    background-color: black;
+    
+    
+}
+
+
+.Pizzas {
+    width: 100%;
+}
+
 left_section {
-    margin-left:3%;
+    /*margin-left:3%;*/
     width: 20%;
-    height: 400px;
+    height: 320px;
     float: left;
     border: solid black 1px;
+    /*min-width: 200px;*/
 }
 
 section {
-    margin-right: 3%px;
-    float: right;
-    width: 70%;
+    min-width: 600px;
+    width: 50%;
     border: solid black 1px;
+    display: block;
+    margin: 0 auto;
+    /*min-width:400px;*/
 }
 
 footer {
@@ -48,17 +81,9 @@ footer {
     text-align: center;
 }
 
-.Carousel {
-    max-width: 50%;
-}
-
-.Pizzas {
-    width: 100%;
-}
-
 .nav {
-    border:1px solid #ccc;
-    border-width:1px 0;
+    border:1px solid black;
+    
     list-style:none; /* removes bullet points */
     margin:0;
     padding:0;
@@ -96,19 +121,22 @@ footer {
     background-color:lightcoral; 
 }
 
-#delivery_form {
+#personal_info p {
+    margin-left: 5px;
     width: 300px;
 }
-
-#delivery_form p {
-    margin-left: 5px;
-}
-
-#delivery_form input {
+#personal_info input {
     float: right;
 }
 
 .your_order {
     background-color: lightgoldenrodyellow;
+}
+
+#myMap {
+    width:80%;
+    min-width: 600px;
+    height:400px;
+    margin: 0 auto;
 }
 

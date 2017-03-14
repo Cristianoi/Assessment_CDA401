@@ -10,7 +10,7 @@
     <body onload="main()">
         <div id="wrapper">  
             <header>
-                <h1>Solent Pizza</h1>
+                <img alt="logo" src="img/logo.png">
                 <ul class="nav">
                     <li><a class="active" href="index.html">Home</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -19,20 +19,21 @@
                 
             </header><!-- Header Ends -->
                         
-            <left_section>
-                <h3>LeftSide</h3>       
-            </left_section><!-- Left Section Ends -->
+            <offersBox>
+                <div class="Carousel">
+                  <img alt="image1" class="Pizzas" src="img/OfferBox/offer1.jpg">
+                  <img alt="image2" class="Pizzas" src="img/OfferBox/offer2.jpg">
+                  <img alt="image3" class="Pizzas" src="img/OfferBox/offer3.jpg">
+                </div>       
+            </offersBox><!-- Offer Box Ends -->
 
             <section>
-                <h2>Section</h2>
-                Map
+                <h2>We are here</h2>
+                            
                 <div id="myMap"></div>
-                <script> async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxB5d5-s-9XObLAwaaIKJMi9WqIsqEGzg&callback=showMap"</script>
-                <div class="Carousel">
-                  <img alt="image1" class="Pizzas" src="img/pizza1.jpg">
-                  <img alt="image2" class="Pizzas" src="img/pizza2.jpg">
-                  <img alt="image3" class="Pizzas" src="img/pizza3.jpg">
-                </div>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByuSi303JSlHH3wWPH_QT5lQyba5zmfG0&callback=myMap"></script>
+                
+                
             </section><!-- Section Ends -->
 
             <footer>

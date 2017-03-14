@@ -9,7 +9,7 @@
     <body onload="main()">
         <div id="wrapper">  
             <header>
-                <h1>Order</h1>
+                <img alt="logo" src="img/logo.png">
                 <ul class="nav">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -17,44 +17,45 @@
                 </ul>
             </header>
             
-            <left_section>
-            </left_section>
+            <offersBox>
+                <div class="Carousel">
+                  <img alt="image1" class="Pizzas" src="img/OfferBox/offer1.jpg">
+                  <img alt="image2" class="Pizzas" src="img/OfferBox/offer2.jpg">
+                  <img alt="image3" class="Pizzas" src="img/OfferBox/offer3.jpg">
+                </div>       
+            </offersBox><!-- Offer Box Ends -->
+
 
             <section>
                 <h2>Your order</h2>
                 <form id="your_order">
                     
                     <h4 id="pizza_base">Select your pizza base*:</h4>
-                    <form id="base_form">
+                    
                         <input type="radio" name="base" value="base_small"> Small £<span class="price">5</span><br>
                         <input type="radio" name="base" value="base_medium"> Medium £<span class="price">7.50</span><br>
                         <input type="radio" name="base" value="base_large"> Large £<span class="price">10</span><br>
                         <input type="radio" name="base" value="base_xlarge"> X-Large £<span class="price">12.50</span><br>
-                    </form>
-
+                    
                     <h4 id="toppings">Select one or more toppings*:</h4>
-                    <form id="toppings_form">
                         <input type="checkbox" name="toppings" value="cheese"> Cheese £<span class="price">0.20</span><br>
                         <input type="checkbox" name="toppings" value="pepperoni"> Pepperoni £<span class="price">0.20</span><br>
                         <input type="checkbox" name="toppings" value="pineapple"> Pineapple £<span class="price">0.20</span><br>
-                    </form>
+                    
 
                     <h4 id="extras">Extras:</h4>
-                    <form id="extras_form">
                         <input type="checkbox" name="extras" value="cheese"> Chips £<span class="price">1.50</span><br>
                         <input type="checkbox" name="extras" value="coke"> Bottle of coke £<span class="price">2.50</span><br>
                         <input type="checkbox" name="extras" value="water"> Bottle of water £<span class="price">1.50</span><br>
-                    </form>
 
                     <h4 id="delivery_info">Delivery information</h4>
-                    <form id="delivery_form">
+                    <class id="personal_info">
                         <p><label for="address">Address Line 1 </label><input type="text" name="address"></p>
                         <p><label for="post_code">Post Code </label><input type="text" name="post_code"></p>
-                    </form>
-                    
-                    <button type="button">Place Order</button>
-                    <button type="button" onclick="reset_form()">Reset</button>
-                    
+                        
+                        <button type="button">Place Order</button>
+                        <button type="button" onclick="reset_form()">Reset</button>
+                    </class>
                 </form>
                 
             </section>
