@@ -2,69 +2,90 @@
 <html lang="en">
     <head>
         <title>Order</title>
+        <link rel="icon"
+       href="img/logo_addressbar.png">
         <link rel="stylesheet" href="css/styles.css">
         <script type="text/javascript" src="scripts/main.js"> </script>
         <meta charset="UTF-8">
     </head>
     <body onload="main()">
         <div id="wrapper">  
+            
+            <!--------------------------- Header Starts --------------------------->
             <header>
                 <img alt="logo" src="img/logo.png">
                 <ul class="nav">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a class="active" href="order.html">Order</a></li>
+                    <li><a id =navigation_bar href="next.html">What's next?</a></li>
                 </ul>
             </header>
-            
-            <offersBox>
+            <!--------------------------- Header Ends --------------------------->
+
+            <!--------------------------- Offer Box Starts ---------------------------> 
+            <offers_box>
                 <div class="Carousel">
                   <img alt="image1" class="Pizzas" src="img/OfferBox/offer1.jpg">
                   <img alt="image2" class="Pizzas" src="img/OfferBox/offer2.jpg">
                   <img alt="image3" class="Pizzas" src="img/OfferBox/offer3.jpg">
                 </div>       
-            </offersBox><!-- Offer Box Ends -->
+            </offers_box>
+            <!--------------------------- Offer Box Ends --------------------------->
+            
+            <container>
+                <!--------------------------- Section Order Starts --------------------------->
+                <section_order>
+                    <h2>Your order</h2>
+                    <form id="your_order" onchange="updateOrder()">
+
+                        <h4 id="pizza_base">Select your pizza base*:</h4>
+
+                        <input type="radio" name="base" value="Small" data-price="5.00"> Small <span class="price">£5</span><br>
+                        <input type="radio" name="base" value="Medium" data-price="7.50"> Medium <span class="price">£7.50</span><br>
+                        <input type="radio" name="base" value="Large" data-price="10.00"> Large <span class="price">£10</span><br>
+                        <input type="radio" name="base" value="X-Large" data-price="12.50"> X-Large <span class="price">£12.50</span><br>
+
+                        <h4 id="toppings">Select one or more toppings*:</h4>
+                        <input type="checkbox" name="toppings" value="cheese" data-price="0.20"> Cheese <span class="price">£0.20</span><br>
+                        <input type="checkbox" name="toppings" value="pepperoni" data-price="0.20"> Pepperoni <span class="price">£0.20</span><br>
+                        <input type="checkbox" name="toppings" value="pineapple" data-price="0.20"> Pineapple <span class="price">£0.20</span><br>
 
 
-            <section>
-                <h2>Your order</h2>
-                <form id="your_order">
-                    
-                    <h4 id="pizza_base">Select your pizza base*:</h4>
-                    
-                        <input type="radio" name="base" value="base_small"> Small £<span class="price">5</span><br>
-                        <input type="radio" name="base" value="base_medium"> Medium £<span class="price">7.50</span><br>
-                        <input type="radio" name="base" value="base_large"> Large £<span class="price">10</span><br>
-                        <input type="radio" name="base" value="base_xlarge"> X-Large £<span class="price">12.50</span><br>
-                    
-                    <h4 id="toppings">Select one or more toppings*:</h4>
-                        <input type="checkbox" name="toppings" value="cheese"> Cheese £<span class="price">0.20</span><br>
-                        <input type="checkbox" name="toppings" value="pepperoni"> Pepperoni £<span class="price">0.20</span><br>
-                        <input type="checkbox" name="toppings" value="pineapple"> Pineapple £<span class="price">0.20</span><br>
-                    
+                        <h4 id="extras">Extras:</h4>
+                        <input type="checkbox" name="extras" value="Chips" data-price="1.50"> Chips <span class="price">£1.50</span><br>
+                        <input type="checkbox" name="extras" value="Coke (2l bottle)" data-price="2.50"> Bottle of coke <span class="price">£2.50</span><br>
+                        <input type="checkbox" name="extras" value="Water (2l bottle)" data-price="1.50"> Bottle of water <span class="price">£1.50</span><br>
 
-                    <h4 id="extras">Extras:</h4>
-                        <input type="checkbox" name="extras" value="cheese"> Chips £<span class="price">1.50</span><br>
-                        <input type="checkbox" name="extras" value="coke"> Bottle of coke £<span class="price">2.50</span><br>
-                        <input type="checkbox" name="extras" value="water"> Bottle of water £<span class="price">1.50</span><br>
+                        <h4 id="delivery_info">Delivery information</h4>
+                        <class id="personal_info">
+                            <p><label for="address">Address Line 1 </label><input type="text" name="address"></p>
+                            <p><label for="post_code">Post Code </label><input type="text" name="post_code"></p>
 
-                    <h4 id="delivery_info">Delivery information</h4>
-                    <class id="personal_info">
-                        <p><label for="address">Address Line 1 </label><input type="text" name="address"></p>
-                        <p><label for="post_code">Post Code </label><input type="text" name="post_code"></p>
-                        
-                        <button type="button">Place Order</button>
-                        <button type="button" onclick="reset_form()">Reset</button>
-                    </class>
-                </form>
-                
-            </section>
+                            <button name="send" type="button">Place Order</button>
+                            <button type="button" onclick="reset_form()">Reset</button>
+                        </class>
+                    </form>
 
+                </section_order>
+                <!--------------------------- Section Order Ends --------------------------->
+
+                <!--------------------------- Order Summary Starts --------------------------->
+                <order_summary>
+                    <h3>Order Summary</h3>
+                    <p id="choices"></p> <p id="cost"></p> <br>
+                    <div id="total">Total: £ <p id="price"></p></div>
+                </order_summary>
+                <!--------------------------- Order Summary Ends --------------------------->
+            </container>
+
+            <!--------------------------- Footer Starts --------------------------->
             <footer>
-                <h3>Footer</h3>
                 <p></p><p id="date"></p><br>
                 <p>Time: </p><p id="time"></p>
-            </footer><!-- Footer Ends -->
+            </footer>
+            <!--------------------------- Footer Ends --------------------------->
+            
         </div>
     </body>
 </html> 
