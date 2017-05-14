@@ -76,6 +76,11 @@ section_order .price {
     width: 300px;
 }
 
+#nameTick, #surnameTick, #emailTick, #messageTick, #nameRequiredError, #surnameRequiredError, #emailRequiredError, #emailInvalidError, #messageRequiredError {
+    display: none;
+}
+
+
 order_summary {
     width: 20%;
     min-width: 250px;

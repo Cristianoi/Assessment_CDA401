@@ -22,15 +22,7 @@ function main() {
     
     if (location.pathname.split("/").pop() == 'contact.html') {
         
-        var myForm = document.getElementById("contact_form");
-        myForm.addEventListener("submit",validateForm());
-        document.getElementById("nameRequiredError").style.display = "none";
-        document.getElementById("surnameRequiredError").style.display = "none";
-        document.getElementById("emailRequiredError").style.display = "none";
-        document.getElementById("emailInvalidError").style.display = "none";
-        document.getElementById("nameTick").style.display = "none";
-        document.getElementById("surnameTick").style.display = "none";
-        document.getElementById("emailTick").style.display = "none";
+        
     }
 }
 
@@ -46,18 +38,23 @@ function addZero(time) {
 function timeClock() {
     
     var today = new Date();
-    var date = new Date().toLocaleDateString();
+    var date = new Date();
     
        
     var curr_hour = addZero(today.getHours());
     var curr_minute = addZero(today.getMinutes());
     var curr_second = addZero(today.getSeconds());
     
-    var curr_time = curr_hour + ":" + curr_minute + ":" + curr_second;
+    var curr_day = addZero(today.getDate());
+    var curr_month = addZero(today.getMonth());
+    var curr_year = addZero(today.getFullYear());
     
+    
+    var curr_time = curr_hour + ":" + curr_minute + ":" + curr_second;
+    var curr_date = curr_day + "/" + curr_month + "/" + curr_year;
     
     document.getElementById("time").innerHTML = curr_time;
-    document.getElementById("date").innerHTML = date;
+    document.getElementById("date").innerHTML = curr_date;
     setTimeout("timeClock()", 500);
 }
 
@@ -82,36 +79,7 @@ function imageCarousel() {
         
 }
 
-/*
-function validateForm() {
-    console.log("working");
-    var form = document.getElementById("contact_form");
-    
-    if (form.first_name.value == "") {
-        form.first_name.style.backgroundColor = "red";
-        document.getElementById("nameRequiredError").style.display = "inline";
-    } else {
-        form.first_name.style.backgroundColor = "white";
-        document.getElementById("nameRequiredError").style.display = "none";
-    }
-    if (form.last_name.value == "") {
-        form.last_name.style.backgroundColor = "red";
-        document.getElementById("surnameRequiredError").style.display = "inline";
-    } else {
-        form.last_name.style.backgroundColor = "white";
-        document.getElementById("surnameRequiredError").style.display = "none";
-        }
-    if (form.email.value == "") {
-        form.email.style.backgroundColor = "red";
-        document.getElementById("emailRequiredError").style.display = "inline";
-    } else {
-        form.email.style.backgroundColor = "white";
-        document.getElementById("emailRequiredError").style.display = "none";
-    }
-    
-    
-}
-*/
+
 
 
 function validateForm(inputName) {
@@ -123,22 +91,26 @@ function validateForm(inputName) {
             if (form.first_name.value == "") {
                 form.first_name.style.backgroundColor = "red";
                 document.getElementById("nameRequiredError").style.display = "inline";
-                document.getElementById("nameTick").style.display = "none";
+                document.getElementById("nameTick").style.display = "inline";
+                document.getElementById("nameTick").style.color = "red";
             } else {
                 form.first_name.style.backgroundColor = "white";
                 document.getElementById("nameRequiredError").style.display = "none";
                 document.getElementById("nameTick").style.display = "inline";
+                document.getElementById("nameTick").style.color = "green";
             }
         break;
         case "last_name":
             if (form.last_name.value == "") {
             form.last_name.style.backgroundColor = "red";
             document.getElementById("surnameRequiredError").style.display = "inline";
-            document.getElementById("surnameTick").style.display = "none";
+            document.getElementById("surnameTick").style.display = "inline";
+            document.getElementById("surnameTick").style.color = "red";
         } else {
             form.last_name.style.backgroundColor = "white";
             document.getElementById("surnameRequiredError").style.display = "none";
             document.getElementById("surnameTick").style.display = "inline";
+            document.getElementById("surnameTick").style.color = "green";
         }
         break;
         case "email":
@@ -146,22 +118,36 @@ function validateForm(inputName) {
                 form.email.style.backgroundColor = "red";
                 document.getElementById("emailRequiredError").style.display = "inline";
                 document.getElementById("emailInvalidError").style.display = "none";
-                document.getElementById("emailTick").style.display = "none";
+                document.getElementById("emailTick").style.display = "inline";
+                document.getElementById("emailTick").style.color = "red";
             } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email.value)) {
                 form.email.style.backgroundColor = "white";
                 document.getElementById("emailInvalidError").style.display = "none";
                 document.getElementById("emailRequiredError").style.display = "none";
                 document.getElementById("emailTick").style.display = "inline";
+                document.getElementById("emailTick").style.color = "green";
             } else {
         
-            form.email.style.backgroundColor = "red";
-            document.getElementById("emailInvalidError").style.display = "inline";
-            document.getElementById("emailRequiredError").style.display = "none";
-            document.getElementById("emailTick").style.display = "none";
+                form.email.style.backgroundColor = "red";
+                document.getElementById("emailInvalidError").style.display = "inline";
+                document.getElementById("emailRequiredError").style.display = "none";
+                document.getElementById("emailTick").style.display = "inline";
+                document.getElementById("emailTick").style.color = "red";
             }
         break;
-        
-        
+        case "message":
+            if (form.message.value == "") {
+                form.message.style.background = "red";
+                document.getElementById("messageRequiredError").style.display = "inline";
+                document.getElementById("messageTick").style.display = "inline";
+                document.getElementById("messageTick").style.color = "red";
+            } else {
+                form.message.style.background = "white";
+                document.getElementById("messageRequiredError").style.display = "none";
+                document.getElementById("messageTick").style.display = "inline";
+                document.getElementById("messageTick").style.color = "green";
+            }
+        break;
     }
 }
 

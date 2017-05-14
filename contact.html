@@ -36,7 +36,7 @@
             <!--------------------------- Section Starts --------------------------->
             <section>
                 <h2>Contact Us</h2>
-                <form id="contact_form">
+                <form id="contact_form" action="message_sent.html">
                     <fieldset>
                         <legend>Personal information:</legend>
                         First name:<br>
@@ -52,8 +52,9 @@
                         Phone number:<br>
                         <input type="number" name="phone"><br>
                         Message:<br>
-                        <textarea name="message" rows="10" cols="40" ></textarea><br><br>
-                        <button name="submit">Submit</button>
+                        <textarea name="message" required rows="10" cols="40" onchange="validateForm(this.name)"></textarea> <span id="messageTick">&#10004</span> 
+                        <p id="messageRequiredError"> Required </p><br><br>
+                        <button name="submit" method="POST">Submit</button>
                     </fieldset>
                 </form>
                 
