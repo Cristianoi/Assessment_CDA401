@@ -19,7 +19,6 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a class="active" href="contact.html">Contact</a></li>
                     <li><a href="order.html">Order</a></li>
-                    <li><a id =navigation_bar href="next.html">What's next?</a></li>
                 </ul>
             </header>
             <!--------------------------- Header Ends --------------------------->
@@ -41,14 +40,15 @@
                     <fieldset>
                         <legend>Personal information:</legend>
                         First name:<br>
-                        <input type="text" name="first_name" required onchange="validateForm(this.name)">
+                        <input type="text" required name="first_name" onchange="validateForm(this.name)"> <span id="nameTick">&#10004</span>
                         <p id="nameRequiredError"> Required </p><br>
                         Last name:<br>
-                        <input type="text" name="last_name" required onchange="validateForm(this.name)">
+                        <input type="text" required name="last_name" onchange="validateForm(this.name)"> <span id="surnameTick">&#10004</span>
                         <p id="surnameRequiredError"> Required </p><br>
                         Email:<br>
-                        <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required onchange="validateForm(this.name)">
-                        <p id="emailRequiredError"> Required </p><br>
+                        <input type="email" required name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" onchange="validateForm(this.name)"> <span id="emailTick">&#10004</span>
+                        <p id="emailRequiredError"> Required </p>
+                        <p id="emailInvalidError"> Enter Valid Email </p><br>
                         Phone number:<br>
                         <input type="number" name="phone"><br>
                         Message:<br>

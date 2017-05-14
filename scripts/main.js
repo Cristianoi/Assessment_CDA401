@@ -19,17 +19,18 @@ function main() {
     }
     */
     
-    if (location.pathname.split("/").pop() == 'next.html') {
-        countDown();
-        dadCarousel();
-    }
     
     if (location.pathname.split("/").pop() == 'contact.html') {
         
-        /*myForm.addEventListener("submit",validateForm);*/
+        var myForm = document.getElementById("contact_form");
+        myForm.addEventListener("submit",validateForm());
         document.getElementById("nameRequiredError").style.display = "none";
         document.getElementById("surnameRequiredError").style.display = "none";
         document.getElementById("emailRequiredError").style.display = "none";
+        document.getElementById("emailInvalidError").style.display = "none";
+        document.getElementById("nameTick").style.display = "none";
+        document.getElementById("surnameTick").style.display = "none";
+        document.getElementById("emailTick").style.display = "none";
     }
 }
 
@@ -57,7 +58,7 @@ function timeClock() {
     
     document.getElementById("time").innerHTML = curr_time;
     document.getElementById("date").innerHTML = date;
-    setTimeout("timeClock()", 500)
+    setTimeout("timeClock()", 500);
 }
 
 function imageCarousel() {
@@ -122,29 +123,42 @@ function validateForm(inputName) {
             if (form.first_name.value == "") {
                 form.first_name.style.backgroundColor = "red";
                 document.getElementById("nameRequiredError").style.display = "inline";
+                document.getElementById("nameTick").style.display = "none";
             } else {
                 form.first_name.style.backgroundColor = "white";
                 document.getElementById("nameRequiredError").style.display = "none";
+                document.getElementById("nameTick").style.display = "inline";
             }
         break;
         case "last_name":
             if (form.last_name.value == "") {
             form.last_name.style.backgroundColor = "red";
             document.getElementById("surnameRequiredError").style.display = "inline";
+            document.getElementById("surnameTick").style.display = "none";
         } else {
             form.last_name.style.backgroundColor = "white";
             document.getElementById("surnameRequiredError").style.display = "none";
+            document.getElementById("surnameTick").style.display = "inline";
         }
         break;
         case "email":
             if (form.email.value == "") {
+                form.email.style.backgroundColor = "red";
+                document.getElementById("emailRequiredError").style.display = "inline";
+                document.getElementById("emailInvalidError").style.display = "none";
+                document.getElementById("emailTick").style.display = "none";
+            } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email.value)) {
+                form.email.style.backgroundColor = "white";
+                document.getElementById("emailInvalidError").style.display = "none";
+                document.getElementById("emailRequiredError").style.display = "none";
+                document.getElementById("emailTick").style.display = "inline";
+            } else {
+        
             form.email.style.backgroundColor = "red";
-            document.getElementById("emailRequiredError").style.display = "inline";
-        } else {
-            
-            form.email.style.backgroundColor = "white";
+            document.getElementById("emailInvalidError").style.display = "inline";
             document.getElementById("emailRequiredError").style.display = "none";
-        }
+            document.getElementById("emailTick").style.display = "none";
+            }
         break;
         
         
@@ -212,47 +226,4 @@ function updateOrder(event) {
 }
 
 
-function showMap() {
-    
-    var myCenter = new google.maps.LatLng(50.9080, -1.4002);
-    var mapCanvas = document.getElementById("myMap");
-    var mapOptions = {center: myCenter, zoom: 14};
-    var map = new google.maps.Map(mapCanvas, mapOptions)
-    var marker = new google.maps.Marker({position:myCenter, animation: google.maps.Animation.BOUNCE});
-  marker.setMap(map);
-    var infowindow = new google.maps.InfoWindow({
-        content: "We are here!",
-        
-    });
-    infowindow.open(map,marker);
-}
 
-
-function countDown() {
-    
-    
-    setTimeout("countDown()", 500);
-    /*
-    https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/
-    */
-}
-
-function dadCarousel() {
-    
-    var image = document.getElementsByClassName("Dad");
-    
-    for (var i = 0; i < image.length; i++) {
-        image[i].style.display = "none";
-    }
-    for (var i = 0; i < image.length; i++) {
-        if (i == current_dadimage) {
-            image[i].style.display = "block";
-        }
-    }
-    current_dadimage++;
-    if (current_dadimage == image.length) {
-        current_dadimage = 0;
-    }
-    setTimeout("dadCarousel()",3000);
-        
-}
