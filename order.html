@@ -46,23 +46,37 @@
                         <input type="radio" name="base" value="X-Large" data-price="12.50"> X-Large <span class="price">£12.50</span><br>
 
                         <h4 id="toppings">Select one or more toppings*:</h4>
+                        
                         <input type="checkbox" name="toppings" value="cheese" data-price="0.20"> Cheese <span class="price">£0.20</span><br>
+                        <input type="checkbox" name="toppings" value="chicken" data-price="0.20"> Chicken <span class="price">£0.20</span><br>
+                        <input type="checkbox" name="toppings" value="ham" data-price="0.20"> Ham <span class="price">£0.20</span><br>
+                        <input type="checkbox" name="toppings" value="onions" data-price="0.20"> Oninons <span class="price">£0.20</span><br>
                         <input type="checkbox" name="toppings" value="pepperoni" data-price="0.20"> Pepperoni <span class="price">£0.20</span><br>
                         <input type="checkbox" name="toppings" value="pineapple" data-price="0.20"> Pineapple <span class="price">£0.20</span><br>
+                        <input type="checkbox" name="toppings" value="pepper" data-price="0.20"> Pepper <span class="price">£0.20</span><br>
+                        <input type="checkbox" name="toppings" value="tomato" data-price="0.20"> Tomato <span class="price">£0.20</span><br>
+                        <input type="checkbox" name="tuna" value="pineapple" data-price="0.20"> Tuna <span class="price">£0.20</span><br>
 
 
                         <h4 id="extras">Extras:</h4>
-                        <input type="checkbox" name="extras" value="Chips" data-price="1.50"> Chips <span class="price">£1.50</span><br>
+                        <input type="checkbox" name="extras" value="Potato wages" data-price="3.50"> Potato wages <span class="price">£3.50</span><br>
+                        <input type="checkbox" name="extras" value="Garlic bread" data-price="3.50"> Garlic bread <span class="price">£3.50</span><br>
+                        <input type="checkbox" name="extras" value="Salad" data-price="2.50"> Potato wages <span class="price">£2.50</span><br>
                         <input type="checkbox" name="extras" value="Coke (2l bottle)" data-price="2.50"> Bottle of coke <span class="price">£2.50</span><br>
                         <input type="checkbox" name="extras" value="Water (2l bottle)" data-price="1.50"> Bottle of water <span class="price">£1.50</span><br>
 
                         <h4 id="delivery_info">Delivery information</h4>
                         <class id="personal_info">
-                            <p><label for="address">Address Line 1 </label><input type="text" name="address"></p>
-                            <p><label for="post_code">Post Code </label><input type="text" name="post_code"></p>
+                            <p><label for="address">Address Line 1 </label><input type="text" id="address" name="address"></p>
+                            <p><label for="post_code">Post Code </label><input type="text" id="post_code" name="post_code"></p>
 
-                            <button name="send" type="button">Place Order</button>
-                            <button type="button" onclick="reset_form()">Reset</button>
+                            <button id="send" type="button" onclick="send_order()">Place Order</button>
+                            <button id="reset" type="button" onclick="reset_form()">Reset</button> <br>
+                            <p id="error_message"> 
+                                <span id="errormessage_pizzabase">Error: Please select a pizza base</span><br>
+                                <span id="errormessage_address">Error: Please enter an Address Line</span><br>
+                                <span id="errormessage_postcode">Error: Please enter a Post Code</span>
+                            </p>
                         </class>
                     </form>
 

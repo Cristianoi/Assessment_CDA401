@@ -151,9 +151,37 @@ function validateForm(inputName) {
     }
 }
 
+function send_order() {
+    var form = document.getElementById("your_order");
+    if (form.base.value == "" || form.post_code.value=="" || form.address.value=="" ) {
+        document.getElementById("error_message").style.display = "inline-block";
+        document.getElementById("errormessage_pizzabase").style.display = "none";
+        document.getElementById("errormessage_address").style.display = "none";
+        document.getElementById("errormessage_postcode").style.display = "none";
+    } else {
+        document.getElementById("error_message").style.display = "none";
+    }
+    if (form.base.value == "") {
+        document.getElementById("errormessage_pizzabase").style.display = "inline-block";
+    }
+    if (form.address.value == "") {
+        document.getElementById("errormessage_address").style.display = "inline-block";
+    }
+    if (form.post_code.value == "") {
+        document.getElementById("errormessage_postcode").style.display = "inline-block";
+    }
+    
+    if (form.base.value!="" && form.post_code.value!="" && form.address.value!="" ) {
+        window.location= "order_sent.html";
+    }
+    
+    
+}
+    
+    
 
 function reset_form() {
-    console.log("resetting..")
+    
     var form = document.getElementById("your_order");
     
     for (var i = 0; i < form.base.length; i++) {
@@ -170,6 +198,8 @@ function reset_form() {
     document.getElementById("price").innerHTML = "0";
     document.getElementById("choices").innerHTML = "";
     document.getElementById("cost").innerHTML = "";
+    document.getElementById("address").value = "";
+    document.getElementById("post_code").value = "";
     
 }
 
@@ -209,6 +239,19 @@ function updateOrder(event) {
     document.getElementById("price").innerHTML = total;
     document.getElementById("choices").innerHTML = choices;
     document.getElementById("cost").innerHTML = cost;
+    
+    if (form.base.value != "") {
+        document.getElementById("errormessage_pizzabase").style.display = "none";
+    }
+    if (form.address.value != "") {
+        document.getElementById("errormessage_address").style.display = "none";
+    }
+    if (form.post_code.value != "") {
+        document.getElementById("errormessage_postcode").style.display = "none";
+    }
+    if (form.base.value!="" && form.post_code.value!="" && form.address.value!="" ) {
+        document.getElementById("error_message").style.display = "none";
+    }
 }
 
 

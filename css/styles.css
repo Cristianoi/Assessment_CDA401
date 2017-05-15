@@ -52,14 +52,11 @@ section {
 container {
     width: 65%;
     height: 500px;
-    border: solid red 1px;
     display: block;
     margin: 0 auto;
 }
 
 section_order {
-    border: solid white 1px;
-    display: block;
     width: 400px;
     float: left;
 }
@@ -98,6 +95,9 @@ order_summary h3{
     text-align: center;
 }
 
+order_summary p {
+    display: inline;
+}
 
 #choices {
     float: left;
@@ -117,7 +117,29 @@ order_summary h3{
     margin-bottom: 30px;
 }
 
+#error_message {
+    display: none;
+    font-size: 19px;
+    margin-left: 100px;
+    background-color: #e2baba;
+    color: #992f2f;
+    font-weight: bold;
+    border-radius: 4px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    padding: 20px 80px 20px 80px;
+    
+}
 
+button {
+    padding: 8px 30px 8px 30px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+button:hover {
+    color:#8e2d2d;
+    background-color: #f9cccc;
+}
 
 footer {
     width: 100%;
@@ -205,11 +227,3 @@ footer {
 
 
 
-order_summary p {
-    display: inline;
-}
-
-#img {
-    display: 
-    display: none;
-}
