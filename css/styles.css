@@ -70,6 +70,7 @@ section_order .price {
 }
 
 #contact_form {
+    float:left;
     width: 300px;
 }
 
@@ -77,6 +78,13 @@ section_order .price {
     display: none;
 }
 
+myMap {
+    float:right;
+}
+
+myMap h3 {
+    text-align: center;
+}
 
 order_summary {
     width: 20%;
