@@ -1,5 +1,6 @@
 #logo {
     width:30%;
+    min-width: 300px;
 }
 
 body {
@@ -10,7 +11,6 @@ body {
 
 header {
     width: 100%;
-    border: solid white 1px;
     
 }
 
@@ -24,10 +24,10 @@ header img {
 
 
 offers_box {
-    max-width: 400px;
+    max-width: 500px;
     
     
-    border: solid white 1px;
+    border: solid red 1px;
     display: block;
     margin: 0 auto;    
     
@@ -43,9 +43,8 @@ offers_box img {
 
 
 section {
-    max-width: 370px;
+    max-width: 600px;
     width: 100%;
-    border: solid white 1px;
     display: block;
     margin: 0 auto;
 }
@@ -53,6 +52,7 @@ section {
 #contact_form {
     float:left;
     width: 300px;
+    margin-top: 80px;
 }
 
 #nameTick, #surnameTick, #emailTick, #messageTick, #nameRequiredError, #surnameRequiredError, #emailRequiredError, #emailInvalidError, #messageRequiredError {
@@ -69,8 +69,7 @@ myMap h3 {
 
 
 container {
-    border: solid white 1px;
-    max-width: 370px;
+    max-width: 600px;
     width: 100%;
     height:900px;
     display: block;
@@ -78,11 +77,11 @@ container {
 }
 
 section_order {
-    border: solid white 1px;
     display: block;
     margin: 0 auto;
     width:100%;
     min-width: 200px;
+    max-width:370px;
     float: left;
 }
 
@@ -98,10 +97,11 @@ order_summary {
     width:100%;
     max-width:300px;
     min-height: 200px;
-    border: solid white 1px;
+    border: outset #245199 1px;
     display: block;
     float:left;
     margin-top: 30px;
+    margin-left: 20px;
 }
 
 order_summary h3{
@@ -116,6 +116,7 @@ order_summary p {
 
 #choices {
     float: left;
+    margin-left: 10px;
     
 }
 
@@ -159,7 +160,6 @@ button:hover {
 footer {
     width: 100%;
     float: right;
-    border: solid white 1px;
     height: 100px;
 }
 
@@ -191,7 +191,6 @@ footer {
 }
 
 .nav {
-    border:1px solid white;
     
     list-style:none; /* removes bullet points */
     margin:0;
